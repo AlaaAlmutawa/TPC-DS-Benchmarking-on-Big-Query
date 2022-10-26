@@ -1,0 +1,104 @@
++-------------+--------------+--------------+---------------+------------------+----------------+--------------+------------+
+| c_last_name | c_first_name |   ca_city    |  bought_city  | ss_ticket_number | extended_price | extended_tax | list_price |
++-------------+--------------+--------------+---------------+------------------+----------------+--------------+------------+
+| NULL        | NULL         | Brownsville  | Lincoln       |             1405 |       18307.62 |       581.66 |   49567.34 |
+| NULL        | NULL         | Kingston     | Hopewell      |             4806 |       30785.03 |      1231.02 |   51830.55 |
+| NULL        | Bonnie       | Lakeside     | Antioch       |             6945 |       13225.53 |       741.66 |   27273.96 |
+| NULL        | NULL         | Kimball      | Fairview      |             9552 |       35953.83 |       979.91 |   62003.44 |
+| NULL        | NULL         | Bridgeport   | Guilford      |            15404 |        16488.3 |       698.95 |   30632.68 |
+| NULL        | Kent         | Wilson       | Cedar Grove   |            16212 |       25392.66 |       761.26 |   64091.28 |
+| NULL        | NULL         | West Liberty | Unionville    |            18346 |       20323.97 |       459.93 |   37830.28 |
+| NULL        | Corey        | Hopewell     | Riverview     |            18836 |       17220.86 |       684.18 |   51865.13 |
+| NULL        | NULL         | Deerfield    | Edgewood      |            24800 |          17585 |       389.01 |    30984.7 |
+| NULL        | Jackeline    | Bridgeport   | Mount Vernon  |            26734 |       22481.85 |       512.47 |   43565.89 |
+| NULL        | Marilyn      | Woodville    | Brownsville   |            31190 |       13820.61 |       894.62 |   30351.86 |
+| NULL        | NULL         | Hopewell     | Maple Grove   |            35644 |        8472.36 |       206.56 |   16252.86 |
+| NULL        | NULL         | Riverdale    | Pine Grove    |            42870 |       13556.58 |       794.01 |   30718.17 |
+| NULL        | Joshua       | Lakeside     | Highland Park |            46736 |       29566.29 |      1020.12 |   55274.62 |
+| NULL        | Fred         | Greenville   | Lakeside      |            46779 |       28686.55 |      1398.33 |   47390.39 |
+| NULL        | NULL         | Newport      | Bunker Hill   |            47193 |       37645.73 |       1195.2 |   72749.99 |
+| NULL        | NULL         | Harmony      | Wildwood      |            50099 |       14744.86 |       599.06 |   36444.37 |
+| NULL        | NULL         | Brownsville  | Walnut Grove  |            53883 |        23832.8 |      1031.26 |   32052.94 |
+| NULL        | Malinda      | Fairview     | Farmington    |            55959 |       18937.04 |       269.57 |   29081.97 |
+| NULL        | NULL         | Concord      | Mount Olive   |            61255 |       16864.87 |       751.36 |   37755.02 |
+| NULL        | Micheal      | Shady Grove  | Concord       |            66603 |        8367.41 |       522.34 |   20589.75 |
+| NULL        | Rosemary     | Buena Vista  | Five Points   |            67394 |       13396.15 |       295.42 |   25585.38 |
+| NULL        | NULL         | Forest Hills | Oak Ridge     |            73742 |        8541.68 |        370.9 |    18134.8 |
+| NULL        | David        | Griffin      | Hopewell      |            75507 |       17812.82 |       633.75 |   31405.65 |
+| NULL        | Anthony      | Glenwood     | Clinton       |            77734 |       15619.48 |       856.97 |   31114.53 |
+| NULL        | William      | Summerfield  | Littleton     |            81044 |       14774.39 |       454.59 |   37205.59 |
+| NULL        | NULL         | Mount Olive  | Concord       |            82061 |       21426.26 |       543.88 |   40565.55 |
+| NULL        | Juanita      | Waterloo     | Georgetown    |           100509 |       26660.53 |       676.41 |   51566.27 |
+| NULL        | Shayne       | Lakeside     | Lincoln       |           109580 |       47096.98 |      1253.85 |   70276.72 |
+| NULL        | NULL         | Edgewood     | Shady Grove   |           115777 |        24028.6 |      1274.47 |   54501.08 |
+| NULL        | James        | Arlington    | Oak Ridge     |           125644 |        7142.02 |       301.72 |   21102.74 |
+| NULL        | NULL         | Fairfield    | Farmington    |           127567 |       20219.72 |      1072.52 |   33578.85 |
+| NULL        | Emma         | Brownsville  | Lewis         |           127979 |       19398.96 |       554.85 |   29901.07 |
+| NULL        | NULL         | Arlington    | Pleasant Hill |           128046 |       22938.01 |       702.93 |   46819.01 |
+| NULL        | NULL         | Valley View  | Riverdale     |           128244 |       10996.45 |       492.31 |   19269.74 |
+| NULL        | James        | Georgetown   | Harmony       |           133088 |       18633.92 |      1150.21 |   43557.89 |
+| NULL        | Lacey        | Jamestown    | Riverside     |           134462 |       10125.84 |       293.43 |   26180.45 |
+| NULL        | NULL         | Lakeview     | Shiloh        |           136067 |       21003.73 |        890.3 |    44919.8 |
+| NULL        | William      | Summerfield  | Midway        |           138702 |       11553.57 |       534.36 |   26095.49 |
+| NULL        | Bradley      | Stringtown   | Liberty       |           141838 |       23629.99 |      1061.01 |   35833.99 |
+| NULL        | John         | Union Hill   | Lakeview      |           145005 |       30273.73 |      1977.56 |   47083.91 |
+| NULL        | Willie       | Freeport     | Wyoming       |           147738 |       15265.05 |       608.18 |   43336.34 |
+| NULL        | NULL         | Unionville   | Five Forks    |           148779 |       21348.93 |      1147.63 |   44131.38 |
+| NULL        | NULL         | Fairfield    | Wildwood      |           148926 |       15095.94 |       737.25 |   27388.89 |
+| NULL        | NULL         | Sunnyside    | Stringtown    |           154763 |       25490.44 |      1130.86 |   48873.82 |
+| NULL        | NULL         | Mount Olive  | Clifton       |           154942 |       18497.83 |       803.49 |   45217.47 |
+| NULL        | NULL         | Springfield  | Owens         |           157407 |        11780.6 |        461.5 |   37374.96 |
+| NULL        | NULL         | Greenville   | Five Points   |           166356 |       27056.11 |      1126.11 |   34507.35 |
+| NULL        | Joyce        | Oakwood      | Lebanon       |           169251 |       16867.73 |       366.76 |   21844.88 |
+| NULL        | Deena        | Brownsville  | Marion        |           171527 |       29557.54 |      1537.63 |   58431.09 |
+| NULL        | Jason        | Fairfield    | Mount Vernon  |           172614 |       28760.36 |       727.14 |    51112.5 |
+| NULL        | NULL         | Edgewood     | Hartland      |           175502 |       18476.98 |       414.93 |   33129.04 |
+| NULL        | NULL         | Woodlawn     | Liberty       |           176445 |       37042.58 |      1214.88 |   69026.37 |
+| NULL        | NULL         | Harmony      | Newtown       |           182692 |       18408.87 |       750.57 |   39207.47 |
+| NULL        | NULL         | Kingston     | Red Hill      |           183219 |       33934.04 |      1524.75 |   54039.63 |
+| NULL        | NULL         | Valley View  | Green Acres   |           186529 |         3790.5 |       161.06 |   16430.74 |
+| NULL        | Jamie        | Maple Grove  | Mount Zion    |           187028 |       13738.37 |       555.29 |   38678.95 |
+| NULL        | NULL         | Salem        | Woodville     |           193358 |       13880.44 |        896.2 |   28235.45 |
+| NULL        | Carrie       | Lebanon      | Royal         |           198806 |       27541.66 |       748.49 |    49048.4 |
+| NULL        | Diane        | Five Points  | Mount Zion    |           203347 |       26281.72 |       533.37 |   42267.33 |
+| NULL        | Andrew       | Shiloh       | Mount Zion    |           205712 |       18320.09 |       575.85 |   32773.59 |
+| NULL        | Vicki        | Marion       | Belmont       |           210439 |        6026.26 |       353.73 |   11534.76 |
+| NULL        | Michael      | Macedonia    | Oakdale       |           210713 |       17550.51 |       497.52 |   37197.73 |
+| NULL        | Philip       | Woodlawn     | Springdale    |           218217 |        8257.22 |       141.55 |   18889.73 |
+| NULL        | Robert       | Mount Zion   | Liberty       |           227572 |           8798 |       400.91 |   37292.31 |
+| NULL        | Joseph       | Lakewood     | Mount Olive   |           231104 |       34934.39 |      1256.89 |   55986.84 |
+| NULL        | Shannon      | Brownsville  | Bridgeport    |           231932 |        9441.74 |       356.37 |   17181.28 |
+| NULL        | Ashley       | Cedar Grove  | Unionville    |           232883 |       24038.02 |       860.11 |   51269.94 |
+| NULL        | NULL         | Jamestown    | Oakland       |           233887 |       20510.42 |       839.14 |   53704.97 |
+| NULL        | NULL         | Maple Grove  | Hamilton      |           234822 |        7721.57 |       114.07 |   18908.24 |
+| Aaron       | Martha       | Springdale   | Union Hill    |           197457 |       30433.88 |      1289.87 |   52198.67 |
+| Abbott      | Esther       | Red Hill     | Lebanon       |            28035 |       13870.72 |       526.21 |   34022.78 |
+| Abbott      | Phillip      | Clinton      | Woodville     |            47272 |       49610.47 |      1241.65 |   74192.73 |
+| Abbott      | Kenneth      | Union        | Plainview     |           183253 |       10061.63 |          312 |   32079.75 |
+| Acevedo     | Grace        | Springfield  | Fairview      |            10135 |       17636.54 |       611.22 |   40181.43 |
+| Acevedo     | Frank        | Lakeview     | Glenwood      |           215146 |       13225.53 |       717.33 |    18839.4 |
+| Acker       | Mattie       | Springdale   | Harmony       |            78972 |       44099.05 |      2720.74 |   80434.44 |
+| Acosta      | Tammy        | White Oak    | Ashland       |           199216 |       32887.43 |      1011.86 |   56479.94 |
+| Adair       | Martin       | Highland     | Bayside       |           142446 |        13961.4 |       391.12 |   29551.75 |
+| Adams       | Betty        | Lakewood     | Newtown       |            83966 |       16276.87 |       591.29 |   33501.11 |
+| Adams       | Kenny        | Mount Vernon | Greenfield    |            92259 |       42467.38 |       908.15 |   71060.43 |
+| Adams       | Joseph       | Hopewell     | Oak Ridge     |           103961 |       23428.82 |      1083.98 |   46873.06 |
+| Adams       | Magdalena    | Glendale     | Woodland      |           163019 |       21509.77 |       502.44 |   34843.93 |
+| Adams       | Isidro       | Glenwood     | Red Hill      |           183176 |       10630.29 |       372.02 |   23558.82 |
+| Adams       | Joyce        | Highland     | Cedar Grove   |           195114 |       20891.36 |       711.11 |   38680.73 |
+| Adamson     | Martin       | Riverview    | Shady Grove   |            41342 |       18424.92 |       552.17 |   35103.54 |
+| Agnew       | Elizabeth    | Pine Grove   | Brownsville   |           148802 |        19134.4 |       873.45 |   46277.05 |
+| Ahrens      | Mario        | Willis       | Murray        |            51932 |       15886.59 |       584.21 |   27543.96 |
+| Albert      | NULL         | Clinton      | Stringtown    |           158163 |        25721.3 |       568.49 |   43781.11 |
+| Alderman    | Joseph       | Kingston     | Five Points   |           151971 |        21027.9 |       750.38 |   44657.67 |
+| Aldridge    | Angela       | Royal        | Plainview     |             3344 |       10415.32 |       306.33 |   30421.61 |
+| Alexander   | Annie        | Lebanon      | Union Hill    |            72228 |       16580.34 |      1018.88 |   33696.04 |
+| Allen       | Dwayne       | Waterloo     | Plainview     |           161994 |       15557.75 |       461.34 |   38173.68 |
+| Allison     | Elsie        | Shiloh       | Harmony       |           201869 |        14130.1 |       563.71 |   27916.99 |
+| Almeida     | Rita         | Woodbine     | Highland Park |           104191 |       17452.35 |       475.45 |   36865.09 |
+| Alonzo      | Scott        | Bridgeport   | Spring Hill   |            52243 |       11963.67 |       249.83 |   21910.48 |
+| Alvarez     | Kenneth      | Shady Grove  | Woodville     |            59985 |       10407.47 |       575.04 |   21834.75 |
+| Alvarez     | Glenn        | Mount Vernon | Martinsville  |           191809 |       19592.11 |      1176.85 |   41206.86 |
+| Alves       | Sam          | Mount Olive  | Union Hill    |           129660 |       22050.59 |        820.8 |   42100.03 |
+| Amador      | Rodney       | Ashland      | Jerome        |            47167 |       16205.75 |       534.05 |   32113.07 |
++-------------+--------------+--------------+---------------+------------------+----------------+--------------+------------+

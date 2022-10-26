@@ -1,0 +1,12 @@
++------------------+---------------------+--------------------+------------------------+
+|   customer_id    | customer_first_name | customer_last_name | customer_birth_country |
++------------------+---------------------+--------------------+------------------------+
+| AAAAAAAABIJBAAAA | James               | White              | IRAQ                   |
+| AAAAAAAADIIOAAAA | David               | Carroll            | GIBRALTAR              |
+| AAAAAAAAIJCIBAAA | Thomas              | Oneal              | BANGLADESH             |
+| AAAAAAAAKJBLAAAA | Kerry               | Davis              | AFGHANISTAN            |
+| AAAAAAAAMFPFBAAA | Jamie               | Woods              | TAJIKISTAN             |
+| AAAAAAAANJAMAAAA | Thaddeus            | Griffin            | LITHUANIA              |
+| AAAAAAAANJOLAAAA | Debra               | Underwood          | BOTSWANA               |
+| AAAAAAAAPEHEBAAA | Edith               | Molina             | GREENLAND              |
++------------------+---------------------+--------------------+------------------------+
