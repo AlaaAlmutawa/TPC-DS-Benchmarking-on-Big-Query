@@ -23,7 +23,7 @@ TPC-DS Benchmarking on Big Query
 
 6. For Powertest: Run benchmark_powertest.sh
 
-####Credits: 
+#### Credits: 
 
 scripts have been referenced from the below sources and were adjusted to be used in our particular usecase/environment. 
 The below sources provided us with ability to understand the required syntactical changes for some queries. 
