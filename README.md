@@ -9,19 +9,19 @@ TPC-DS Benchmarking on Big Query
 
 2.a. If dsdgen will be run from Google Compute Engine: Mount [Google Bucket](https://cloud.google.com/storage/docs/gcs-fuse) into {DATA_DIR}
 
-3. Run dsdgen with $SCALE 
+3. Run `dsdgen` with `$SCALE` 
 
-4. Run load_data.sh
+4. Run `load_data.sh`
 
-4.a. Local machine: make sure that you specify the {DATA_DIR}
+4.a. Local machine: make sure that you specify the `DATA_DIR` 
 
-4.b. Google Compute Engine: make sure that you specify {DATA_DIR} created on GCS
+4.b. Google Compute Engine: make sure that you specify `DATA_DIR` created on GCS
 
-./load_data.sh $SCALE 
+`./load_data.sh $SCALE`
 
-5. For Throughput test: Run benchmark.sh  
+5. For Throughput test: Run `benchmark.sh` 
 
-6. For Powertest: Run benchmark_powertest.sh
+6. For Powertest: Run `benchmark_powertest.sh`
 
 #### Credits: 
 
