@@ -7,7 +7,7 @@ TPC-DS Benchmarking on Big Query
 
 2. Clone the repository into the same 
 
-2.a. If dsdgen will be run from Google Compute Engine: Mount [Google Bucket](https://cloud.google.com/storage/docs/gcs-fuse) into {DATA_DIR}
+2.a. Google Compute Engine: Mount [Google Bucket](https://cloud.google.com/storage/docs/gcs-fuse) into `DATA_DIR`
 
 3. Run `dsdgen` with `$SCALE` 
 
