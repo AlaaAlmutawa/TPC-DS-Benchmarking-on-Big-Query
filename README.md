@@ -9,7 +9,9 @@ TPC-DS Benchmarking on Big Query
 
 2.a. Google Compute Engine: Mount [Google Bucket](https://cloud.google.com/storage/docs/gcs-fuse) into `DATA_DIR`
 
-3. Run `dsdgen` with `$SCALE` 
+3. Run `dsdgen` 
+
+`./dsdgen <scale>`
 
 4. Run `load_data.sh`
 
@@ -17,7 +19,7 @@ TPC-DS Benchmarking on Big Query
 
 4.b. Google Compute Engine: make sure that you specify `DATA_DIR` created on GCS
 
-`./load_data.sh $SCALE`
+`./load_data.sh <SCALE>`
 
 5. For Throughput test: Run `benchmark.sh` 
 
