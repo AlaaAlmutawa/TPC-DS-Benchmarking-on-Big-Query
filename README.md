@@ -21,6 +21,8 @@ TPC-DS Benchmarking on Big Query
 
 5. For Throughput test: Run `benchmark.sh` 
 
+`./benchmark.sh <dataset>`
+
 6. For Powertest: Run `benchmark_powertest.sh`
 
 #### Credits: 
