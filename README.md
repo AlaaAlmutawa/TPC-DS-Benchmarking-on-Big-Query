@@ -40,6 +40,8 @@ The below sources provided us with ability to understand the required syntactica
 
 [Reproducing TPC-DS Qualification Results](https://github.com/cwida/tpcds-result-reproduction)
 
+##### This is a group project apart of INFO-H419: Data Warehouse course at ULB and was completed by: Koumudi, Adina, Zyad, Alaa 
+
 
 
 
