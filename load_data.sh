@@ -5,6 +5,7 @@
 # usage: ./load_data.sh $SCALE
 
 PROJECT=scale_$1 #this is essentially your dataset name.
+LOCATION=$2 #this is the project-id where your dataset resides
 
 GCS_BUCKET="tpc-ds-data-repo/${1}SF" #make sure that this matches your directory setup on google bucket
 
@@ -18,17 +19,17 @@ echo "load path: ${GS_BASE}"
 
 echo -e "${RED}Starting to delete Dataset: ${PROJECT}"
 
-bq rm -f $PROJECT
+bq rm -f --project_id ${LOCATION} $PROJECT
 
 echo -e "${GREEN}Starting to create Dataset: ${PROJECT}"
 
-bq mk $PROJECT ###SPECIFY LOCATION !!!!!!!!!
+bq mk --project_id ${LOCATION} $PROJECT
 
 echo -e "${GREEN}Starting data load into Dataset: ${PROJECT} from GCS Path: ${GS_BASE}"
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.call_center"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.call_center gs://${GS_BASE}/call_center* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.call_center gs://${GS_BASE}/call_center* \
 cc_call_center_sk:integer,\
 cc_call_center_id:string,\
 cc_rec_start_date:string,\
@@ -63,7 +64,7 @@ cc_tax_percentage:float
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.catalog_page"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.catalog_page gs://${GS_BASE}/catalog_page* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.catalog_page gs://${GS_BASE}/catalog_page* \
 cp_catalog_page_sk:integer,\
 cp_catalog_page_id:string,\
 cp_start_date_sk:integer,\
@@ -76,7 +77,7 @@ cp_type:string
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.catalog_returns"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.catalog_returns gs://${GS_BASE}/catalog_returns* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.catalog_returns gs://${GS_BASE}/catalog_returns* \
 cr_returned_date_sk:integer,\
 cr_returned_time_sk:integer,\
 cr_item_sk:integer,\
@@ -107,7 +108,7 @@ cr_net_loss:float
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.catalog_sales"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.catalog_sales gs://${GS_BASE}/catalog_sales* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.catalog_sales gs://${GS_BASE}/catalog_sales* \
 cs_sold_date_sk:integer,\
 cs_sold_time_sk:integer,\
 cs_ship_date_sk:integer,\
@@ -145,7 +146,7 @@ cs_net_profit:float
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.customer_address"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.customer_address gs://${GS_BASE}/customer_address* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.customer_address gs://${GS_BASE}/customer_address* \
 ca_address_sk:integer,\
 ca_address_id:string,\
 ca_street_number:string,\
@@ -162,7 +163,7 @@ ca_location_type:string
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.customer_demographics"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.customer_demographics gs://${GS_BASE}/customer_demographics* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.customer_demographics gs://${GS_BASE}/customer_demographics* \
 cd_demo_sk:integer,\
 cd_gender:string,\
 cd_marital_status:string,\
@@ -175,7 +176,8 @@ cd_dep_college_count:integer
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.customer"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.customer gs://${GS_BASE}/customer.dat \
+### File name was renamed to tr_customer_*.dat for the ease of loading
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.customer gs://${GS_BASE}/tr_customer_*.dat \
 c_customer_sk:integer,\
 c_customer_id:string,\
 c_current_cdemo_sk:integer,\
@@ -197,7 +199,7 @@ c_last_review_date:string
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.date_dim"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.date_dim gs://${GS_BASE}/date_dim* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.date_dim gs://${GS_BASE}/date_dim* \
 d_date_sk:integer,\
 d_date_id:string,\
 d_date:date,\
@@ -229,7 +231,7 @@ d_current_year:string
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.household_demographics"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.household_demographics gs://${GS_BASE}/household_demographics* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.household_demographics gs://${GS_BASE}/household_demographics* \
 hd_demo_sk:integer,\
 hd_income_band_sk:integer,\
 hd_buy_potential:string,\
@@ -238,14 +240,14 @@ hd_vehicle_count:integer
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.income_band"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.income_band gs://${GS_BASE}/income_band* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.income_band gs://${GS_BASE}/income_band* \
 ib_income_band_sk:integer,\
 ib_lower_bound:integer,\
 ib_upper_bound:integer
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.inventory"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.inventory gs://${GS_BASE}/inventory* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.inventory gs://${GS_BASE}/inventory* \
 inv_date_sk:integer,\
 inv_item_sk:integer,\
 inv_warehouse_sk:integer,\
@@ -253,7 +255,7 @@ inv_quantity_on_hand:integer
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.item"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.item gs://${GS_BASE}/item* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.item gs://${GS_BASE}/item* \
 i_item_sk:integer,\
 i_item_id:string,\
 i_rec_start_date:string,\
@@ -279,7 +281,7 @@ i_product_name:string
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.promotion"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.promotion gs://${GS_BASE}/promotion* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.promotion gs://${GS_BASE}/promotion* \
 p_promo_sk:integer,\
 p_promo_id:string,\
 p_start_date_sk:integer,\
@@ -302,14 +304,14 @@ p_discount_active:string
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.reason"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.reason gs://${GS_BASE}/reason* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.reason gs://${GS_BASE}/reason* \
 r_reason_sk:integer,\
 r_reason_id:string,\
 r_reason_desc:string
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.ship_mode"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.ship_mode gs://${GS_BASE}/ship_mode* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.ship_mode gs://${GS_BASE}/ship_mode* \
 sm_ship_mode_sk:integer,\
 sm_ship_mode_id:string,\
 sm_type:string,\
@@ -319,7 +321,7 @@ sm_contract:string
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.store_returns"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.store_returns gs://${GS_BASE}/store_returns* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.store_returns gs://${GS_BASE}/store_returns* \
 sr_returned_date_sk:integer,\
 sr_return_time_sk:integer,\
 sr_item_sk:integer,\
@@ -343,7 +345,7 @@ sr_net_loss:float
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.store_sales"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.store_sales gs://${GS_BASE}/store_sales* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.store_sales gs://${GS_BASE}/store_sales* \
 ss_sold_date_sk:integer,\
 ss_sold_time_sk:integer,\
 ss_item_sk:integer,\
@@ -370,7 +372,8 @@ ss_net_profit:float
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.store"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.store gs://${GS_BASE}/store.dat \
+### File name was renamed to tr_store_*.dat for the ease of loading
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.store gs://${GS_BASE}/tr_store_*.dat \
 s_store_sk:integer,\
 s_store_id:string,\
 s_rec_start_date:string,\
@@ -403,7 +406,7 @@ s_tax_precentage:float
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.time_dim"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.time_dim gs://${GS_BASE}/time_dim* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.time_dim gs://${GS_BASE}/time_dim* \
 t_time_sk:integer,\
 t_time_id:string,\
 t_time:integer,\
@@ -417,7 +420,7 @@ t_meal_time:string
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.warehouse"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.warehouse gs://${GS_BASE}/warehouse* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.warehouse gs://${GS_BASE}/warehouse* \
 w_warehouse_sk:integer,\
 w_warehouse_id:string,\
 w_warehouse_name:string,\
@@ -435,7 +438,7 @@ w_gmt_offset:float
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.web_page"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.web_page gs://${GS_BASE}/web_page* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.web_page gs://${GS_BASE}/web_page* \
 wp_web_page_sk:integer,\
 wp_web_page_id:string,\
 wp_rec_start_date:string,\
@@ -453,7 +456,7 @@ wp_max_ad_count:integer
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.web_returns"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.web_returns gs://${GS_BASE}/web_returns* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.web_returns gs://${GS_BASE}/web_returns* \
 wr_returned_date_sk:integer,\
 wr_returned_time_sk:integer,\
 wr_item_sk:integer,\
@@ -481,7 +484,7 @@ wr_net_loss:float
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.web_sales"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.web_sales gs://${GS_BASE}/web_sales* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.web_sales gs://${GS_BASE}/web_sales* \
 ws_sold_date_sk:integer,\
 ws_sold_time_sk:integer,\
 ws_ship_date_sk:integer,\
@@ -519,7 +522,7 @@ ws_net_profit:float
 
 echo -e "${GREEN} Loading data into Table: ${PROJECT}.web_site"
 
-bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values ${PROJECT}.web_site gs://${GS_BASE}/web_site* \
+bq load --field_delimiter '|' --null_marker '' --ignore_unknown_values --project_id ${LOCATION} ${PROJECT}.web_site gs://${GS_BASE}/web_site* \
 web_site_sk:integer,\
 web_site_id:string,\
 web_rec_start_date:string,\

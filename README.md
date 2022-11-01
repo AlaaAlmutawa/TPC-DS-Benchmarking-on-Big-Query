@@ -19,7 +19,7 @@ TPC-DS Benchmarking on Big Query
 
 4.b. Google Compute Engine: make sure that you specify `DATA_DIR` created on GCS
 
-`./load_data.sh <scale>`
+`./load_data.sh <scale> <project-id>`
 
 5. For Throughput test: Run `benchmark.sh` 
 
